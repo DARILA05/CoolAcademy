@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+        mb_internal_encoding('UTF-8'); // кодировка кириллицы
+        error_reporting(E_ALL); // вывод всех ошибок (не всегда работает, так как зависит от настроек сервера)
+        ini_set("display_errors", 'on'); // вывод всех ошибок (точнее будет работать)
+    ?>
+    <title>CoolAcademy &ndash; образовательная платформа с онлайн-курсами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="backrooms">
+    <header class="header">
+        <div class="h-content">
+            <button class="logo-h" onclick="document.location='index.html'">
+                Cool<br><span class="contur ultrablack">Academy</span>
+            </button>
+            <button class="btn-h cal" id="btn-cal">
+                Каталог <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="-62.5 0 625 500" xml:space="preserve">
+                            <defs>
+                            </defs>
+                            <g transform="matrix(42.6644681211 0 0 42.6644681211 249.3922289869 250)" id="w-fdky8zDgbaVxh9dGzfS">
+                                <path style="stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12.5)" d="M 7 10 L 12 15 L 17 10" stroke-linecap="round" />
+                            </g>
+                        </svg>
+            </button>
+            <nav class="nav-menu">
+                <ul class="menu">
+                    <li class="menu-items">
+                        <button class="btn-h">
+                            Онлайн-колледж
+                        </button>
+                    </li>
+                    <li class="menu-items">
+                        <button class="btn-h">
+                            Бесплатно <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="-62.5 0 625 500" xml:space="preserve">
+                                        <defs>
+                                        </defs>
+                                        <g transform="matrix(42.6644681211 0 0 42.6644681211 249.3922289869 250)" id="w-fdky8zDgbaVxh9dGzfS">
+                                            <path style="stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12.5)" d="M 7 10 L 12 15 L 17 10" stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                        </button>
+                        <ul class="dropdownmenu">
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Вебинары
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Медиа
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Профориентация
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-items">
+                        <button class="btn-h">
+                            О CoolAcademy <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" viewBox="-62.5 0 625 500" xml:space="preserve">
+                                        <defs>
+                                        </defs>
+                                        <g transform="matrix(42.6644681211 0 0 42.6644681211 249.3922289869 250)" id="w-fdky8zDgbaVxh9dGzfS">
+                                            <path style="stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12.5)" d="M 7 10 L 12 15 L 17 10" stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                        </button>
+                        <ul class="dropdownmenu">
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    О нас
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Результаты
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Отзывы
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Контакты
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Вакансии
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    О платформе
+                                </button>
+                            </li>
+                            <hr class="submenu-hr">
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Центр карьеры
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Школа кураторов
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Скидки для друзей
+                                </button>
+                            </li>
+                            <li class="submenu-items">
+                                <button class="btn-h">
+                                    Сообщество CoolAcademy
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <button class="btn-h" onclick="document.location='vhod_page.html'">
+                Войти
+            </button>
+        </div>
+        <div class="catalog">
+            <nav class="catalog-nav-menu">
+                <h2 class="h2-cal">Каталог направлений</h2>
+                <ul class="cal-menu">
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Программирование
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Аналитика
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Управление
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Игры
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Маркетплейсы
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Психология
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Английский язык
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Дизайн
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Маркетинг
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Финансы
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Кино и музыка
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Инженерия
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Здоровье
+                        </button>
+                    </li>
+                    <li class="cal-items">
+                        <button class="btn-h">
+                            Все курсы
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="overlay" id="overlay"></div>
+    </header>
+    <div class="container">
+        <main class="content">
+            <div class="content1">
+                <div class="block-picture">
+                    <h1 class="h1-home">Hайди себя и новую профессию в CoolAcademy</h1>
+                    <p class="desc-home"><span class="bold">
+                        Продавец <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="20" height="20" viewBox="-62.5 0 625 500" xml:space="preserve">
+                                        <defs>
+                                        </defs>
+                                        <g transform="matrix(42.6644681211 0 0 42.6644681211 249.3922289869 250)" id="w-fdky8zDgbaVxh9dGzfS">
+                                            <path style="stroke-width: 1.5; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;" transform=" translate(-12, -12.5)" d="M 7 10 L 12 15 L 17 10" stroke-linecap="round" />
+                                        </g>
+                                    </svg>
+                        Fashion-фотограф</span><br><br>Елизавета Ясинская, во время обучения провела съёмку для бренда, а после — устроилась фотографом в ЦУМ
+                    </p>
+                    <img class="img-home" src="img/liza-md-v2@1x.webp" alt="img-home">
+                </div>
+            </div>
+            <div class="content2">
+                <h1 class="h1-m">О нас</h1>
+                <p class="m-desc">Миссия CoolAcademy — дать возможность каждому быть актуальным и востребованным специалистом прямо сейчас. Вне зависимости от возраста и географии.</p>
+            </div>
+            <div class="content2">
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+                <h1 class="h1-m anim-text">85% студентов находят работу в первые 3 месяца после обучения</h1>
+                <p class="m-desc center">Подтверждено <a href="#" class="m-link">исследованием</a> Высшей школы экономики</p>
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="content2">
+                <h1 class="h1-m">Наши преимущества</h1>
+                <ul class="blocks">
+                    <li class="block">
+                        <h1 class="h1-m">1</h1>
+                        <p class="m-desc center">Создаём программы с вузами и топовыми компаниями страны</p>
+                    </li>
+                    <li class="block">
+                        <h1 class="h1-m">2</h1>
+                        <p class="m-desc center">Поддерживаем и помогаем прийти к результату</p>
+                    </li>
+                    <li class="block">
+                        <h1 class="h1-m">3</h1>
+                        <p class="m-desc center">Даём подробную обратную связь</p>
+                    </li>
+                    <li class="block">
+                        <h1 class="h1-m">4</h1>
+                        <p class="m-desc center">Свободный график без дедлайнов</p>
+                    </li>
+                    <li class="block">
+                        <h1 class="h1-m">5</h1>
+                        <p class="m-desc center">Бессрочный доступ к курсу и обновлениям</p>
+                    </li>
+                    <li class="block">
+                        <h1 class="h1-m">6</h1>
+                        <p class="m-desc center">Вернём деньги, если не найдёте работу</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content2">
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+                <h1 class="h1-m anim-text">Skillbox — крупнейшая образовательная компания в России и СНГ</h1>
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+                <ul class="blocks">
+                    <li class="block hover-block">
+                        <h1 class="h1-m">№1</h1>
+                        <p class="m-desc center">по качеству обучения в рейтинге Smart Ranking</p>
+                        <div class="info-block">
+                            <p class="m-desc block-desc">Рейтинг качества организации обучения EdTech-компаний в сегменте ДПО</p>
+                        </div>
+                    </li>
+                    <li class="block hover-block">
+                        <h1 class="h1-m">93%</h1>
+                        <p class="m-desc center">окончивших курс отмечают, что достигли своих целей</p>
+                        <div class="info-block">
+                            <p class="m-desc block-desc">Подтверждено независимым <a href="#" class="m-link-block">исследованием</a> Высшей школы экономики (ВШЭ)</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content2">
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+                <h1 class="h1-m anim-text">Начните жизнь по-новому вместе со CoolAcademy</h1>
+                <button class="btn-m akcent-btn">Выбрать курс</button>
+                <div class="marquee-text">
+                    <div class="bg-mar"></div>
+                    <div class="anim">
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                        <h1 class="h1-marquee">COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span> COOL<span class="contur-m">ACADEMY</span></h1>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="f-content1">
+            <button class="logo-f" onclick="document.location='index.html'">
+                Cool<br><span class="contur ultrablack">Academy</span>
+            </button>
+            <div class="f-panel">
+                <nav class="footer-nav-menu">
+                    <h2 class="h2-f">О CoolAcademy</h2>
+                    <ul class="f-menu">
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                О нас
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Центр карьеры
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Отзывы
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Контакты
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Вакансии
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Школа кураторов
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Сообщество CoolAcademy
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                О платформе
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Оплата
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer-nav-menu">
+                    <h2 class="h2-f">Проекты</h2>
+                    <ul class="f-menu">
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Вебинары
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Медиа
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Распродажа
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Бесплатные курсы
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer-nav-menu">
+                    <h2 class="h2-f">Сотрудничество</h2>
+                    <ul class="f-menu">
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Скидки для друзей
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Партнёрская программа
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Корпоративным клиентам
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Работодателям
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Материалы бренда
+                            </button>
+                        </li>
+                        <li class="f-menu-items">
+                            <button class="btn-f">
+                                Социальные проекты
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="f-content2">
+            <p class="f-desc">&copy; ООО &laquo;CoolAcademy&raquo;, все права защищены, 2018-2024<br><a href="#" class="f-link" download="Пользовательское соглашение.docx">Пользовательское соглашение</a></p>
+            <button class="btn-f" id="theme-btn">
+                Сменить на тёмную тему
+            </button>
+        </div>
+    </footer>
+    <script defer src="script.js"></script>
+</body>
+</html>

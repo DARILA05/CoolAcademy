@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+        mb_internal_encoding('UTF-8'); // кодировка кириллицы
+        error_reporting(E_ALL); // вывод всех ошибок (не всегда работает, так как зависит от настроек сервера)
+        ini_set("display_errors", 'on'); // вывод всех ошибок (точнее будет работать)
+    ?>
+    <title>CoolAcademy &ndash; образовательная платформа с онлайн-курсами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="backrooms">
+    <div class="container">
+        <div class="content-form">
+            <form class="form" method="POST">
+                <button class="logo-form center" onclick="document.location='index.html'">
+                    Cool<span class="contur-m ultrablack">Academy</span>
+                </button>
+                <input class="login vhod-width" name="login" type="text" placeholder="ЛОГИН" autocomplete="off" maxlength="10" required>
+                <input class="password vhod-width" name="password" type="text" placeholder="ПАРОЛЬ" autocomplete="off" required>
+                <p class="m-desc">Еще нет аккаунта? <a class="m-link" href="reg_page.html">Регистрация</a></p>
+                <button class="btn-m mar-submit" type="submit">ВОЙТИ</button>
+            </form>
+        </div>
+        <button class="btn-m form-themeBtn" id="theme-btn">
+            Сменить на тёмную тему
+        </button>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>

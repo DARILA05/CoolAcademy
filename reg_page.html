@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php
+        mb_internal_encoding('UTF-8'); // кодировка кириллицы
+        error_reporting(E_ALL); // вывод всех ошибок (не всегда работает, так как зависит от настроек сервера)
+        ini_set("display_errors", 'on'); // вывод всех ошибок (точнее будет работать)
+        
+        session_start();
+    ?>
+    <title>CoolAcademy &ndash; образовательная платформа с онлайн-курсами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="backrooms">
+    <div class="container">
+        <div class="content-form">
+            <form class="form" method="POST">
+                <button class="logo-form center" onclick="document.location='index.html'">
+                    Cool<span class="contur-m ultrablack">Academy</span>
+                </button>
+                <input class="first-name" name="first-name" type="text" placeholder="ИМЯ" autocomplete="off" required>
+                <input class="last-name" name="last-name" type="text" placeholder="ФАМИЛИЯ" autocomplete="off" required>
+                <input class="patronymic" name="patronymic" type="text" placeholder="ОТЧЕСТВО" autocomplete="off">
+                <input class="login" name="login" type="text" placeholder="ЛОГИН (ИМЯ ПОЛЬЗОВАТЕЛЯ)" autocomplete="off" maxlength="10" required>
+                <input class="e-mail" name="e-mail" type="email" placeholder="E-MAIL" autocomplete="off" required>
+                <input class="tel" name="tel" type="tel" pattern="8[0-9]{10}" placeholder="НОМЕР ТЕЛЕФОНА (8XXXXXXXXXX)" autocomplete="off" required>
+                <div class="gender-group">
+                    <p class="m-desc center">Ваш пол:</p>
+                    <label class="radio">
+                        <input class="gender-male" name="gender" type="radio" value="male">&nbsp;Муж
+                        <span></span>
+                    </label>
+                    <label class="radio">
+                        <input class="gender-female" name="gender" type="radio" value="female">&nbsp;Жен
+                        <span></span>
+                    </label>
+                </div>
+                <select name="region">
+                    <option hidden>ВЫБРАТЬ РЕГИОН</option>
+                    <option value="Казань">КАЗАНЬ</option>
+                    <option value="Челябинск">ЧЕЛЯБИНСК</option>
+                    <option value="Санкт-Петербург">САНКТ-ПЕТЕРБУРГ</option>
+                    <option value="Новосибирск">НОВОСИБИРСК</option>
+                    <option value="Москва">МОСКВА</option>
+                </select>
+                <input class="password" name="password" type="text" placeholder="ПАРОЛЬ" autocomplete="off" required>
+                <input class="password-check" name="password-check" type="text" placeholder="ПОДТВЕРДИТЕ ПАРОЛЬ" autocomplete="off" required>
+                <div class="checkbox-group">
+                    <label class="check">
+                        <input class="real-checkbox" name="check" type="checkbox" value="Согласен на обработку данных"> Я соглашаюсь с политикой в отношении персональных данных
+                        <span class="custom-checkbox"></span>
+                    </label>
+                </div>
+                <button class="btn-m mar-submit" type="submit">СОЗДАТЬ АККАУНТ</button>
+            </form>
+        </div>
+        <button class="btn-m form-themeBtn" id="theme-btn">
+            Сменить на тёмную тему
+        </button>
+    </div>
+    <script defer src="script.js"></script>
+</body>
+</html>
